@@ -12,8 +12,3 @@ const novoUsuario = new conta ("breno")
 
 console.log(novoUsuario.nome)
 
-export class name {
-    constructor(parameters) {
-        
-    }
-}
