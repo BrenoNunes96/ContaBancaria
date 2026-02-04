@@ -1,7 +1,18 @@
 
+
+
+
+
 import leia = require('readline-sync');
 import {colors} from "./src/util/Colors"
+import Conta from "./model/Conta"; // importa o classe conta do arquivo conta
 export function main (){
+    const c2 = new Conta(1,234,'breno',2,31231)
+  console.log(  c2.visualizar())
+const c1 = new Conta(leia.questionInt("digite sua conta"),leia.questionInt("digite sua agencia"),leia.question("digite seu nome"),leia.questionInt("digite o tipo da sua conta"),leia.questionInt("digite o saldo")) // variavel C1 que cria uma novo OBJETO da CLASSE Conta
+c1.sacar(2000.00)
+console.log(c1.visualizar())
+    while(true){
         console.log(colors.bg.black, colors.fg.yellow,"*****************************************************");
         console.log("                                                     ");
         console.log("                BANCO DO BRAZIL COM Z                ");
@@ -66,9 +77,9 @@ default:
         }
 
 
-}
-      main()
-            export function Sobre(){
+}}
+  
+            export function Sobre():void{
 
          console.log(colors.bg.black, colors.fg.yellow,"\n*****************************************************");
     console.log("Projeto Desenvolvido por: Breno Nunes de Almeida");
@@ -77,4 +88,4 @@ default:
     console.log("*****************************************************"),colors.reset
 
             }
-      
+      main()
