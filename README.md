@@ -97,7 +97,7 @@ Para executar os exemplos localmente, você precisará de:
 1. Clone o repositório
 
 ```bash
-git clone https://github.com/rafaelq80/javascript_tjs13.git
+git clone https://github.com/brenonunes96/javascript_tjs13.git
 ```
 
 2. Abra a pasta do projeto no **Visual Studio Code**
@@ -147,5 +147,5 @@ Este projeto está licenciado sob a licença **MIT**. Sinta-se livre para estuda
 
 
 
-Desenvolvido por [**Rafael**](https://github.com/rafaelq80)
+Desenvolvido por [**Breno**](https://github.com/brenonunes96)
 Para dúvidas, sugestões ou colaborações, utilize as **issues do GitHub** ou entre em contato diretamente pelo perfil.
