@@ -147,5 +147,5 @@ Este projeto está licenciado sob a licença **MIT**. Sinta-se livre para estuda
 
 
 
-Desenvolvido por [**Breno**](https://github.com/brenonunes96)
+Desenvolvido por [**Breno Nunes**](https://github.com/brenonunes96)
 Para dúvidas, sugestões ou colaborações, utilize as **issues do GitHub** ou entre em contato diretamente pelo perfil.
