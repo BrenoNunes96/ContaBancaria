@@ -1,17 +1,20 @@
+import { contaCorrente } from './model/ContaCorrente';
 
 
 
 
-
-import leia = require('readline-sync');
+import { Input } from "./src/util/inputs";
 import {colors} from "./src/util/Colors"
-import Conta from "./model/Conta"; // importa o classe conta do arquivo conta
+
+import { ContaPoupança } from './model/ContaPoupança';
 export function main (){
-    const c2 = new Conta(1,234,'breno',2,31231)
-  console.log(  c2.visualizar())
-const c1 = new Conta(leia.questionInt("digite sua conta"),leia.questionInt("digite sua agencia"),leia.question("digite seu nome"),leia.questionInt("digite o tipo da sua conta"),leia.questionInt("digite o saldo")) // variavel C1 que cria uma novo OBJETO da CLASSE Conta
-c1.sacar(2000.00)
-console.log(c1.visualizar())
+   
+  
+  let c3 = new ContaPoupança(2,323242,'julia',1,4214,3242342)
+
+  c3.visualizar()
+c3.sacar(4000)
+  c3.visualizar()
     while(true){
         console.log(colors.bg.black, colors.fg.yellow,"*****************************************************");
         console.log("                                                     ");
@@ -30,55 +33,62 @@ console.log(c1.visualizar())
         console.log("            9 - Sair                                 ");
         console.log("                                                     ");
         console.log("*****************************************************",colors.reset);
-console.log(colors.bg.black, colors.fg.yellow,'digite uma opçao',colors.reset)
-let opcao : number= leia.questionInt('')
+console.log(colors.bg.black, colors.fg.red,'digite uma opçao',colors.reset)
+let opcao : number= Input.questionInt('')
 
-if(opcao === 0){
+if(opcao === 9){
  console.log(colors.bg.black, colors.fg.yellow,"\n\nBanco do Brazil com Z - O seu Futuro começa aqui!",colors.reset)
 
     Sobre()
-    console.log(colors.reset,'')
-    process.exit(0)
+    console.log('')
+    process.exit(9)
 }
 
-        switch(opcao){
+ switch(opcao){
 case 1:
-    console.log('\n\nCriar Contaz\n\n')
-    break
+    console.log('\n\nCriar Conta\n\n')
+    keyPress()
+break
 case 2:
     console.log('\n\nListar todas as Contas\n\n')
+     keyPress()
     break
 case 3:
     console.log("\n\n Buscas Conta por Numero \n\n")
+     keyPress()
     break
 case 4:
-    console.log("\n\n tualizar Dados da Conta   \n\n")
+    console.log("\n\n atualizar Dados da Conta   \n\n")
+     keyPress()
    break
 case 5:
     console.log("\n\n  Apagar Conta     \n\n")
+     keyPress()
 
    break
    case 6:
     console.log("\n\n Sacar\n\n")
+     keyPress()
     break
 case 7:
        console.log("\n\n Depositar\n\n")
+        keyPress()
     break
 case 8:
        console.log("\n\n Transferir valores entre Contas \n\n")
+        keyPress()
     break
 case 9:
        console.log("\n\n Sair\n\n")
-      
+       keyPress()
     break
 default:
         console.log("invalido")
-
+break
         }
+    }
 
-
-}}
-  
+}
             export function Sobre():void{
 
          console.log(colors.bg.black, colors.fg.yellow,"\n*****************************************************");
@@ -88,4 +98,11 @@ default:
     console.log("*****************************************************"),colors.reset
 
             }
+
+
+  export  function keyPress():void {
+console.log('aperte enter')
+Input.prompt()
+
+    }        
       main()

@@ -1,6 +1,6 @@
 import leia from "readline-sync"
 
-export default class ContaBancaria{
+export default abstract class Conta{
 private _numero : number;
 private _agencia :number;
 private _titular :string;
@@ -9,6 +9,7 @@ private _saldo :number;
   
 
     
+
 constructor(numero:number,agencia:number,titular:string,tipo:number,saldo:number  ){
 
 this._numero = numero;
