@@ -1,7 +1,8 @@
 {
   "compilerOptions": {
     /* Visite https://aka.ms/tsconfig para ler mais sobre este arquivo */
-
+    "types": ["node"],
+    // ... other options
     /* Projetos */
     // "incremental": true,                              /* Salva arquivos .tsbuildinfo para permitir compilação incremental de projetos. */
     // "composite": true,                                /* Habilita restrições para permitir que um projeto TypeScript seja usado com referências de projeto. */
@@ -11,7 +12,8 @@
     // "disableReferencedProjectLoad": true,             /* Reduz o número de projetos carregados automaticamente pelo TypeScript. */
 
     /* Linguagem e Ambiente */
-    "target": "es2020",                                  /* Define a versão do JavaScript gerado e inclui bibliotecas compatíveis. */
+    "target": "es2020", 
+                                     /* Define a versão do JavaScript gerado e inclui bibliotecas compatíveis. */
     // "lib": [],                                        /* Especifica um conjunto de arquivos de declaração que descrevem o ambiente de execução. */
     // "jsx": "preserve",                                /* Define como o código JSX será gerado. */
     // "experimentalDecorators": true,                   /* Habilita suporte experimental para decorators legados. */
@@ -103,7 +105,6 @@
     // "noPropertyAccessFromIndexSignature": true,       /* Força uso de acesso por índice. */
     // "allowUnusedLabels": true,                        /* Desativa erro para labels não usadas. */
     // "allowUnreachableCode": true,                     /* Desativa erro para código inalcançável. */
-
     /* Completude */
     // "skipDefaultLibCheck": true,                      /* Ignora checagem de tipos em arquivos .d.ts padrão. */
     "skipLibCheck": true                                 /* Ignora checagem de tipos em todos os arquivos .d.ts. */

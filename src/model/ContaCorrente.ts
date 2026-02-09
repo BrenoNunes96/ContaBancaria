@@ -1,4 +1,4 @@
-import conta from "../model/Conta"
+import conta from "./Conta"
 
 
 export class contaCorrente extends conta{
@@ -8,7 +8,8 @@ private _limite : number;
 constructor(numero:number,agencia:number,titular:string,tipo:number,saldo:number,limite:number){
 super(numero,agencia,titular,tipo,saldo)
 this._limite = limite;
-}
+
+}   
 
 
 public sacar(value :number):boolean{

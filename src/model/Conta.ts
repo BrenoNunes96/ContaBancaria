@@ -7,7 +7,7 @@ private _titular :string;
 private _tipo : number;
 private _saldo :number;
   
-
+ 
     
 
 constructor(numero:number,agencia:number,titular:string,tipo:number,saldo:number  ){
@@ -117,11 +117,11 @@ public depositar(value:number):void{
 
 public sacar (value:number):boolean{
      if(value>this._saldo){
-               console.log("saldo insuficiente");
-               return false
+     console.log("saldo insuficiente");
+      return false   
      }
      this._saldo -= value;
-     return true;
+return true
 }
 
 
@@ -153,6 +153,6 @@ console.log(`saldo ${this._saldo.toFixed(2)}`)
 
 }
 
-
+// cadastrar deletar. atualizar. procuarar pelo numero 
 
 

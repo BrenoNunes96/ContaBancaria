@@ -1,20 +1,21 @@
-import { contaCorrente } from './model/ContaCorrente';
 
-
-
-
+import { contaCorrente } from './src/model/ContaCorrente';
 import { Input } from "./src/util/inputs";
 import {colors} from "./src/util/Colors"
+import contaController from './src/controller/contaController';
 
-import { ContaPoupança } from './model/ContaPoupança';
-export function main (){
-   
-  
+import { ContaPoupança } from './src/model/ContaPoupança';
+
+import Conta from './src/model/Conta';
+
+
+const contaControllers = new contaController()
+export function main (){  
+
   let c3 = new ContaPoupança(2,323242,'julia',1,4214,3242342)
 
-  c3.visualizar()
-c3.sacar(4000)
-  c3.visualizar()
+
+
     while(true){
         console.log(colors.bg.black, colors.fg.yellow,"*****************************************************");
         console.log("                                                     ");
@@ -47,27 +48,38 @@ if(opcao === 9){
  switch(opcao){
 case 1:
     console.log('\n\nCriar Conta\n\n')
+    criarConta()
     keyPress()
 break
 case 2:
     console.log('\n\nListar todas as Contas\n\n')
+    listarContas()
      keyPress()
     break
 case 3:
     console.log("\n\n Buscas Conta por Numero \n\n")
+
+
      keyPress()
     break
 case 4:
     console.log("\n\n atualizar Dados da Conta   \n\n")
+ let y = Input.questionInt('qual numero da conta vai att ?')
+atualizar(y)
+
      keyPress()
    break
 case 5:
     console.log("\n\n  Apagar Conta     \n\n")
      keyPress()
+    let n =  Input.questionInt("digite o numero da conta a ser apagada")
+     deletar(n)
+      keyPress()
 
    break
    case 6:
     console.log("\n\n Sacar\n\n")
+    contaControllers.sacar(0,421)
      keyPress()
     break
 case 7:
@@ -87,9 +99,81 @@ default:
 break
         }
     }
+}
+
+const listarContas = ()=>{
+
+let listagem = contaControllers.listarTodas()
+console.log(listagem)
 
 }
-            export function Sobre():void{
+
+
+ const criarConta = ()=>{
+    
+let tipoContas = ['conta corrente','conta poupança']
+
+   console.log('digite o numero da agencia')
+    const agencia = Input.questionInt("")
+
+       console.log('digite o nome do titular')
+       const titular = Input.question("")
+       
+          console.log('digite o tipo da conta ')
+  const tipo = Input.keyInSelect(tipoContas,"",{cancel:false})+1   
+
+       const saldo = Input.questionFloat("digite o saldo")
+
+   switch(tipo){
+    case 1:    
+      const limite= Input.questionInt("digite o limite da conta") 
+      contaControllers.cadastrar(new contaCorrente(contaControllers.gerarNumero(),agencia,titular,tipo,saldo,limite)) 
+      console.log("conta cadastrada")
+       
+         break
+case 2: // conta poupança
+
+console.log("digite o dia do seu aniverario")
+const aniversario = Input.questionInt("")
+contaControllers.cadastrar(new ContaPoupança(contaControllers.gerarNumero(),agencia,titular,tipo,saldo,aniversario,)  )
+console.log('conta cadastrada poupança')
+break
+
+default :
+console.log('invalido')
+
+   }
+            
+        
+ }
+
+
+ function buscarcontaPorNumero () :void {
+let numeros = Input.questionInt('numero da conta')
+
+    contaControllers.procurarPorNumero(numeros)
+ }
+
+const atualizar = (num:number):void =>{
+const conta  = contaControllers.atualizar(num)
+
+
+
+
+}
+
+
+
+
+const deletar = (n : number): void =>{
+
+contaControllers.deletar(n)
+
+
+}
+
+
+export function Sobre():void{
 
          console.log(colors.bg.black, colors.fg.yellow,"\n*****************************************************");
     console.log("Projeto Desenvolvido por: Breno Nunes de Almeida");
@@ -106,3 +190,16 @@ Input.prompt()
 
     }        
       main()
+
+      function criarContasTeste(): void{
+   
+    // Instâncias da Classe ContaCorrente
+    contaControllers.cadastrar(new  contaCorrente(contaControllers.gerarNumero(), 1234, 'Amanda Magro', 1, 1000000.00, 100000.00));
+    contaControllers.cadastrar(new contaCorrente(contaControllers.gerarNumero(), 4578, 'João da Silva', 1,  1000.00, 100.00));
+ 
+    // Instâncias da Classe ContaPoupança
+    contaControllers.cadastrar(new ContaPoupança(contaControllers.gerarNumero(), 5789, "Geana Almeida", 2, 10000, 10));
+    contaControllers.cadastrar(new ContaPoupança(contaControllers.gerarNumero(), 5698, "Jean Lima", 2, 15000, 15));
+ 
+}
+ 
