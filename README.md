@@ -30,7 +30,7 @@
 
 
 
-Este repositório reúne os **exercícios práticos desenvolvidos durante o Bootcamp JavaScript Full Stack** da [Generation Brasil](https://brazil.generation.org/).
+Este repositório reúne os **exercícios práticos desenvolvidos durante o Bootcamp JavaScript Full Stack** da [Breno Nunes de Almeida).
 
 O conteúdo abrange desde os **fundamentos da linguagem TypeScript**, até os conceitos essenciais para lógica de programação e desenvolvimento moderno, incluindo:
 
